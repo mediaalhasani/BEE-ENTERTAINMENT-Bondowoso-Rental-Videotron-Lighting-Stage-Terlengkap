@@ -1,374 +1,283 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BEE ENTERTAINMENT | Premium Event Production</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEE ENTERTAINMENT | Premium Event Production</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-    scroll-behavior:smooth;
-}
+    <style>
+        /* BASE STYLES */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+            scroll-behavior:smooth;
+        }
 
-body{
-    background:#0d0d0d;
-    color:#fff;
-    overflow-x:hidden;
-}
+        body{
+            background:#0d0d0d;
+            color:#fff;
+            overflow-x: hidden; /* Mencegah geser kanan-kiri di HP */
+        }
 
-/* HEADER */
-header{
-    position:fixed;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 5%;
-    background:rgba(0,0,0,0.85);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
+        /* HEADER */
+        header{
+            position:fixed;
+            width:100%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 5%;
+            background:rgba(0,0,0,0.85);
+            backdrop-filter:blur(10px);
+            z-index:1000;
+        }
 
-header img{
-    height:38px;
-}
+        header img{
+            height:45px;
+        }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:15px;
-    font-weight:500;
-    font-size:13px;
-}
+        nav a{
+            color:#fff;
+            text-decoration:none;
+            margin-left:20px;
+            font-weight:500;
+            transition:0.3s;
+        }
 
-/* HERO VIDEO */
-.hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-}
+        nav a:hover{
+            color:#f5b400;
+        }
 
-.hero video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+        /* HERO VIDEO */
+        .hero{
+            position:relative;
+            height:100vh;
+            overflow:hidden;
+        }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:0 20px;
-    background:rgba(0,0,0,0.6);
-}
+        .hero video{
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit:cover;
+        }
 
-.hero-content h1{
-    font-size:26px;
-    font-weight:800;
-    color:#f5b400;
-}
+        .hero-content{
+            position:relative;
+            z-index:2;
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            background:rgba(0,0,0,0.6);
+            padding: 0 20px;
+        }
 
-.hero-content p{
-    margin-top:10px;
-    font-size:14px;
-    line-height:1.6;
-}
+        .hero-content h1{
+            font-size:55px;
+            font-weight:800;
+            color:#f5b400;
+            line-height: 1.1;
+        }
 
-.cta-btn{
-    margin-top:20px;
-    padding:10px 25px;
-    font-size:13px;
-    background:#f5b400;
-    color:#000;
-    border:none;
-    border-radius:25px;
-    font-weight:600;
-}
+        .hero-content p{
+            margin-top:15px;
+            font-size:20px;
+        }
 
-/* SECTION */
-section{
-    padding:60px 5%;
-}
+        .cta-btn{
+            margin-top:30px;
+            padding:12px 35px;
+            background:#f5b400;
+            color:#000;
+            border:none;
+            border-radius:30px;
+            cursor:pointer;
+            font-weight:600;
+            transition: 0.3s;
+        }
 
-.section-title{
-    text-align:center;
-    font-size:22px;
-    color:#f5b400;
-    margin-bottom:30px;
-}
+        .cta-btn:hover {
+            transform: scale(1.05);
+            background: #fff;
+        }
 
-/* PRODUCT CARD */
-.products{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:20px;
-}
+        /* SECTION GENERAL */
+        section{
+            padding:100px 5%;
+        }
 
-.card{
-    background:#1a1a1a;
-    border-radius:15px;
-    overflow:hidden;
-}
+        .section-title{
+            text-align:center;
+            font-size:40px;
+            color:#f5b400;
+            margin-bottom:60px;
+        }
 
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
+        /* PRODUCT CARD */
+        .products{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:30px;
+        }
 
-.card-content{
-    padding:15px;
-}
+        #produk a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-.card-content h3{
-    color:#f5b400;
-    margin-bottom:8px;
-    font-size:16px;
-}
+        .card{
+            background:#1a1a1a;
+            border-radius:20px;
+            overflow:hidden;
+            transition:0.4s;
+            height: 100%;
+            border: 1px solid #333;
+        }
 
-.card-content p{
-    font-size:13px;
-    line-height:1.5;
-}
+        .card:hover{
+            transform:translateY(-10px);
+            border-color: #f5b400;
+        }
 
-/* PORTFOLIO */
-.portfolio img{
-    width:100%;
-    border-radius:15px;
-}
+        .card img{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+        }
 
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    z-index:2000;
-    padding-top:80px;
-    left:0;top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.95);
-}
+        .card-content{
+            padding:25px;
+        }
 
-.modal img{
-    display:block;
-    margin:auto;
-    max-width:95%;
-}
+        .card-content h3{
+            color:#f5b400;
+            margin-bottom:10px;
+        }
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-    position:fixed;
-    bottom:18px;
-    right:18px;
-    background:#25D366;
-    padding:14px 16px;
-    border-radius:50%;
-    font-size:20px;
-    color:#fff;
-    text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
-}
+        /* PORTFOLIO */
+        .portfolio img{
+            width:100%;
+            border-radius:20px;
+            display: block;
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#111;
-    font-size:13px;
-}
+        /* MODAL */
+        .modal{
+            display:none;
+            position:fixed;
+            z-index:2000;
+            left:0; top:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.95);
+            padding: 20px;
+        }
 
-/* TABLET */
-@media(min-width:768px){
-    .hero-content h1{
-        font-size:48px;
-    }
+        .modal img{
+            display:block;
+            margin:auto;
+            max-width:90%;
+            max-height: 80vh;
+            border-radius: 10px;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-    .hero-content p{
-        font-size:18px;
-    }
+        .modal:target{
+            display:block;
+        }
 
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
+        /* WHATSAPP FLOAT */
+        .whatsapp{
+            position:fixed;
+            bottom:25px;
+            right:25px;
+            background:#25D366;
+            width: 60px;
+            height: 60px;
+            border-radius:50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size:30px;
+            color:#fff;
+            text-decoration:none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1001;
+        }
 
-    .section-title{
-        font-size:32px;
-    }
-}
+        /* FOOTER */
+        footer{
+            text-align:center;
+            padding:40px;
+            background:#111;
+            border-top: 1px solid #222;
+        }
 
-/* DESKTOP */
-@media(min-width:1024px){
-    .products{
-        grid-template-columns:repeat(4,1fr);
-    }
+        /* RESPONSIVE DESAIN (UNTUK ANDROID & TABLET) */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 5%;
+                flex-direction: column;
+                text-align: center;
+            }
 
-    .hero-content h1{
-        font-size:60px;
-    }
-}
+            header img {
+                height: 35px;
+                margin-bottom: 10px;
+            }
 
+            nav a {
+                margin: 0 8px;
+                font-size: 13px;
+            }
 
-/* HERO VIDEO */
-.hero{
-    position:relative;
-    height:100vh;
-    overflow:hidden;
-}
+            .hero-content h1 {
+                font-size: 32px;
+            }
 
-.hero video{
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+            .hero-content p {
+                font-size: 16px;
+            }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:rgba(0,0,0,0.6);
-}
+            section {
+                padding: 60px 5%;
+            }
 
-.hero-content h1{
-    font-size:55px;
-    font-weight:800;
-    color:#f5b400;
-}
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 35px;
+            }
 
-.hero-content p{
-    margin-top:15px;
-    font-size:20px;
-}
+            .products {
+                grid-template-columns: 1fr; /* Satu kartu per baris di HP */
+            }
 
-.cta-btn{
-    margin-top:30px;
-    padding:12px 30px;
-    background:#f5b400;
-    color:#000;
-    border:none;
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:600;
-}
-
-/* SECTION */
-section{
-    padding:100px 5%;
-}
-
-.section-title{
-    text-align:center;
-    font-size:40px;
-    color:#f5b400;
-    margin-bottom:60px;
-}
-
-/* PRODUCT CARD */
-.products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:#1a1a1a;
-    border-radius:20px;
-    overflow:hidden;
-    transition:0.4s;
-    cursor:pointer;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:25px;
-}
-
-.card-content h3{
-    color:#f5b400;
-    margin-bottom:10px;
-}
-
-/* PORTFOLIO */
-.portfolio img{
-    width:100%;
-    border-radius:20px;
-}
-
-/* MODAL */
-.modal{
-    display:none;
-    position:fixed;
-    z-index:2000;
-    padding-top:100px;
-    left:0;top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.9);
-}
-
-.modal img{
-    display:block;
-    margin:auto;
-    max-width:80%;
-}
-
-.modal:target{
-    display:block;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp{
-    position:fixed;
-    bottom:25px;
-    right:25px;
-    background:#25D366;
-    padding:15px 18px;
-    border-radius:50%;
-    font-size:22px;
-    color:#fff;
-    text-decoration:none;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:40px;
-    background:#111;
-}
-</style>
+            .card img {
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-    <img src="img\logo.png" alt="BEE ENTERTAINMENT">
+    <img src="img/logo.png" alt="BEE ENTERTAINMENT">
     <nav>
         <a href="#">Home</a>
         <a href="#produk">Layanan</a>
@@ -377,101 +286,96 @@ footer{
     </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-    <video autoplay muted loop>
-        <source src="img\BEELED.mov" type="video/mp4">
+    <video autoplay muted loop playsinline>
+        <source src="img/BEELED.mov" type="video/mp4">
     </video>
     <div class="hero-content">
-        <h1>BEE ENTERTAINMENT</h1>
-        <p>Professional Stage • Videotron • Lighting • Projection Mapping</p>
-        <button class="cta-btn">BOOK EVENT SEKARANG</button>
+        <h1 data-aos="fade-down">BEE ENTERTAINMENT</h1>
+        <p data-aos="fade-up">Professional Stage • Videotron • Lighting • Projection Mapping</p>
+        <button class="cta-btn" onclick="window.location.href='https://wa.me/6285235569031'">BOOK EVENT SEKARANG</button>
     </div>
 </div>
 
-<!-- PRODUK -->
 <section id="produk">
-<h2 class="section-title">Layanan Premium</h2>
+    <h2 class="section-title" data-aos="fade-up">Layanan Premium</h2>
 
-<div class="products">
+    <div class="products">
+        <a href="#img1">
+            <div class="card" data-aos="fade-up">
+                <img src="img/raging stage.jpeg" alt="Stage">
+                <div class="card-content">
+                    <h3>Raging Stage</h3>
+                    <p>Panggung kokoh dan elegan untuk konser, festival, wedding & event besar.</p>
+                </div>
+            </div>
+        </a>
 
-<a href="#img1">
-<div class="card" data-aos="fade-up">
-<img src="img\raging stage.jpeg">
-<div class="card-content">
-<h3>Raging Stage</h3>
-<p>Panggung kokoh dan elegan untuk konser, festival, wedding & event besar.</p>
-</div>
-</div>
-</a>
+        <a href="#img2">
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <img src="img/videotron.jpeg" alt="Videotron">
+                <div class="card-content">
+                    <h3>Videotron</h3>
+                    <p>LED Screen resolusi tinggi dengan visual tajam dan terang maksimal.</p>
+                </div>
+            </div>
+        </a>
 
-<a href="#img2">
-<div class="card" data-aos="fade-up">
-<img src="img\videotron.jpeg">
-<div class="card-content">
-<h3>Videotron</h3>
-<p>LED Screen resolusi tinggi dengan visual tajam dan terang maksimal.</p>
-</div>
-</div>
-</a>
+        <a href="#img3">
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <img src="img/lighting.jpeg" alt="Lighting">
+                <div class="card-content">
+                    <h3>Lighting Event</h3>
+                    <p>Sistem lighting profesional dengan efek spektakuler dan modern.</p>
+                </div>
+            </div>
+        </a>
 
-<a href="#img3">
-<div class="card" data-aos="fade-up">
-<img src="img\lighting.jpeg">
-<div class="card-content">
-<h3>Lighting Event</h3>
-<p>Sistem lighting profesional dengan efek spektakuler dan modern.</p>
-</div>
-</div>
-</a>
-
-<a href="#img4">
-<div class="card" data-aos="fade-up">
-<img src="img\proyektor.jpeg">
-<div class="card-content">
-<h3>Projection Mapping</h3>
-<p>Visual 3D kreatif untuk gedung dan panggung yang memukau.</p>
-</div>
-</div>
-</a>
-
-</div>
+        <a href="#img4">
+            <div class="card" data-aos="fade-up" data-aos-delay="300">
+                <img src="img/proyektor.jpeg" alt="Projector">
+                <div class="card-content">
+                    <h3>Projection Mapping</h3>
+                    <p>Visual 3D kreatif untuk gedung dan panggung yang memukau.</p>
+                </div>
+            </div>
+        </a>
+    </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section id="portfolio">
-<h2 class="section-title">Portfolio Event</h2>
-<div class="portfolio" data-aos="zoom-in">
-<img src="portfolio.jpg">
-</div>
+    <h2 class="section-title" data-aos="fade-up">Portfolio Event</h2>
+    <div class="portfolio" data-aos="zoom-in">
+        <img src="img/portfolio.jpg" alt="Portfolio Kami">
+    </div>
 </section>
 
-<!-- MODAL IMAGE -->
-<div id="img1" class="modal"><img src="stage.jpg"></div>
-<div id="img2" class="modal"><img src="videotron.jpg"></div>
-<div id="img3" class="modal"><img src="lighting.jpg"></div>
-<div id="img4" class="modal"><img src="mapping.jpg"></div>
+<div id="img1" class="modal" onclick="window.location.href='#produk'"><img src="img/raging stage.jpeg"></div>
+<div id="img2" class="modal" onclick="window.location.href='#produk'"><img src="img/videotron.jpeg"></div>
+<div id="img3" class="modal" onclick="window.location.href='#produk'"><img src="img/lighting.jpeg"></div>
+<div id="img4" class="modal" onclick="window.location.href='#produk'"><img src="img/proyektor.jpeg"></div>
 
-<!-- KONTAK -->
 <section id="kontak">
-<h2 class="section-title">Hubungi Kami</h2>
-<p style="text-align:center;">
-📞 085235569031 <br>
-📧 Beeentertainment@gmail.com
-</p>
+    <h2 class="section-title" data-aos="fade-up">Hubungi Kami</h2>
+    <div style="text-align:center; font-size: 18px;">
+        <p>📞 085235569031</p>
+        <p>📧 Beeentertainment@gmail.com</p>
+    </div>
 </section>
 
 <footer>
-© 2026 BEE ENTERTAINMENT | Premium Event Production
+    © 2026 BEE ENTERTAINMENT | Premium Event Production
 </footer>
 
 <a href="https://wa.me/6285235569031" class="whatsapp">💬</a>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
-AOS.init();
+    AOS.init({
+        duration: 800,
+        once: true
+    });
 </script>
 
 </body>
 </html>
-
